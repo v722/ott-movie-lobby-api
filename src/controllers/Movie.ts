@@ -115,6 +115,10 @@ export const updateMovie = [
             if (link) {
                 setMovie.link = link;
             }
+            const movie = await Movie.findOne({ _id: new ObjectId(id), isDeleted: { $ne: true} });
+            if (!movie) {
+                throw new AppError(AppCode.MovieNotFound);
+            }
             await Movie.updateOne(
                 { _id: new ObjectId(id) },
                 { $set: setMovie }
