@@ -22,7 +22,7 @@ initConnection().then(() => {
     /* eslint-disable @typescript-eslint/no-unused-vars */
     app.use(async (err, req, res, next) => {
         if (err instanceof AppError) {
-            return res.status(400).json({ success: false, code: err.appCode, data: JSON.stringify(err.data) });
+            return res.status(400).json({ success: false, code: err.appCode });
         }
     });
 
