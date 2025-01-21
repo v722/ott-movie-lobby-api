@@ -2,11 +2,10 @@ import { AppCode, getAppCodeMessage } from "./AppCode";
 
 export class AppError extends Error {
     public readonly appCode: AppCode;
-    public readonly data: any;
-    constructor(appCode: AppCode, data?: any) {
+
+    constructor(appCode: AppCode) {
         super(getAppCodeMessage(appCode));
         this.name = AppError.name;
         this.appCode = appCode;
-        this.data = data;
     }
 }

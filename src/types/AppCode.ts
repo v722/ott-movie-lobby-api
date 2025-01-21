@@ -21,8 +21,3 @@ export function getAppCodeMessage(appCode: AppCode): string {
         default:
     }
 }
-
-/* eslint-disable @typescript-eslint/no-unused-vars */
-const neverReached = (never: never) => {
-    //
-};
